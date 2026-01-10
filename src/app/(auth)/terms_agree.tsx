@@ -8,7 +8,7 @@ import { router } from "expo-router";
 
 const TermsAgree = () => {
   const navigate_to_opt = () => {
-    router.push("/(auth)/verify_otp");
+    router.push("/(auth)/login");
   };
   return (
     <SafeAreaView style={styles.container}>

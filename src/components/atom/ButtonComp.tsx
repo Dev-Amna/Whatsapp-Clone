@@ -2,9 +2,9 @@ import { StyleSheet, Text, TouchableOpacity } from "react-native";
 import React from "react";
 import { moderateScale, scale, verticalScale } from "react-native-size-matters";
 
-const ButtonComp = ({ btn, onpress }: any) => {
+const ButtonComp = ({ btn, onpress,style }: any) => {
   return (
-    <TouchableOpacity style={styles.btn_style} onPress={onpress} activeOpacity={0.8}>
+    <TouchableOpacity style={[styles.btn_style, style]} onPress={onpress} activeOpacity={0.8}>
       <Text style={styles.btn_text}>{btn}</Text>
     </TouchableOpacity>
   );
