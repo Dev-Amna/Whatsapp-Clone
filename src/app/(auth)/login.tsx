@@ -1,12 +1,24 @@
-import { View, Text, StyleSheet, TextInput } from "react-native";
-import React from "react";
 import ButtonComp from "@/src/components/atom/ButtonComp";
-import { SafeAreaView } from "react-native-safe-area-context";
-import { moderateScale, scale, verticalScale } from "react-native-size-matters";
+
+
+
 import AntDesign from "@expo/vector-icons/AntDesign";
 import { router } from "expo-router";
-import CountryPicker from 'react-native-country-picker-modal'
+import React, { useState } from "react";
+import {
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from "react-native";
+import CountryPicker from "react-native-country-picker-modal";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { moderateScale, scale, verticalScale } from "react-native-size-matters";
 const Login = () => {
+  const [visible, setVisible] = useState(false);
+  const [countryName, setCountryName] = useState("Pakistan");
+  const [countryCode, setCountryCode] = useState("+ 92");
   const onNextButtonClick = () => {
     router.push("/(auth)/verify_otp");
   };
@@ -22,20 +34,23 @@ const Login = () => {
         </View>
 
         <View style={styles.input_main_container}>
-          <View style={styles.dropDown_container}>
-            <View />
-            <Text style={styles.dropDown_title}>Pakistan</Text>
+          <TouchableOpacity
+            style={styles.dropDown_container}
+            onPress={() => setVisible(true)}
+          >
+            <View></View>
+            <Text style={styles.dropDown_title}>{countryName}</Text>
             <AntDesign
               name="caret-down"
               size={moderateScale(14)}
               color="black"
             />
-          </View>
+          </TouchableOpacity>
           <View style={styles.horizontal_line} />
           {/* Input container */}
           <View style={styles.input_container}>
             <View style={styles.country_code}>
-              <Text style={styles.country_code_text}>+ 92</Text>
+              <Text style={styles.country_code_text}>{countryCode}</Text>
               <View style={styles.horizontal_line} />
             </View>
             <View style={{ gap: verticalScale(10), flex: 1 }}>
@@ -56,6 +71,16 @@ const Login = () => {
           onpress={onNextButtonClick}
         />
       </View>
+      {visible && (
+        <CountryPicker 
+          visible={true}
+          onClose={() => setVisible(false)}
+          onSelect={(e :any) => {
+            setCountryCode(`+${e.callingCode[0]} `);
+            setCountryName(e.name);
+          }} 
+        />
+      )}
     </SafeAreaView>
   );
 };

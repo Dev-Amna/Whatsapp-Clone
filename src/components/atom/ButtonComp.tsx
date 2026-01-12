@@ -24,6 +24,6 @@ const styles = StyleSheet.create({
   btn_text: {
     color: "white",
     fontWeight: "bold",
-    textTransform: "uppercase",
+    // textTransform: "uppercase",
   },
 });
