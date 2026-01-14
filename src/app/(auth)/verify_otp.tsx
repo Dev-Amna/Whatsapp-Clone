@@ -1,13 +1,22 @@
-import { View, Text, StyleSheet, BackHandler } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import React, { useState } from "react";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { moderateScale, scale, verticalScale } from "react-native-size-matters";
 import ButtonComp from "@/src/components/atom/ButtonComp";
+import OTPInput from "@codsod/react-native-otp-input";
 
-const Verify_otp = () => {
-  const [otp, setOtp] = useState();
-  const onPress = () => {};
+import { storage } from "../../utils/utils";
+
+function Verify_otp() {
+  const [otp, setOTP] = useState();
+  const onPress = async () => {
+    console.log(otp);
+    let token = "demo_token_1012112";
+
+       await storage.setString("accessToken", token);
+
+  };
   return (
     <SafeAreaView style={styles.container}>
       {/* header */}
@@ -19,20 +28,28 @@ const Verify_otp = () => {
       {/* body */}
       <View style={styles.body}>
         <Text style={styles.otpText}>Code has been send to +91 11******44</Text>
-        <Text style={styles.resendText}>Resend Code in <Text style={styles.counterText}>56</Text> s</Text>
+        <OTPInput
+          style={styles.otpContainer}
+          length={4}
+          onOtpComplete={(txt: string) => setOTP(txt)}
+          inputStyle={styles.otpInput}
+        />
+        <Text style={styles.resendText}>
+          Resend Code in <Text style={styles.counterText}>56</Text> s
+        </Text>
       </View>
 
       {/* footer */}
       <View style={styles.footer}>
         <ButtonComp
           btn="Verify"
-          onPress={onPress}
+          onpress={onPress}
           style={styles.verifyButton}
         />
       </View>
     </SafeAreaView>
   );
-};
+}
 
 export default Verify_otp;
 const styles = StyleSheet.create({
@@ -60,10 +77,10 @@ const styles = StyleSheet.create({
   },
   body: {
     alignItems: "center",
-    gap: verticalScale(25)
+    gap: verticalScale(25),
   },
   counterText: {
-     color: "#00A884",
+    color: "#00A884",
   },
   otpText: {
     fontSize: moderateScale(16),
@@ -75,5 +92,14 @@ const styles = StyleSheet.create({
   footer: {},
   verifyButton: {
     borderRadius: moderateScale(50),
+  },
+  otpInput: {
+    height: verticalScale(50),
+    width: scale(50),
+    borderRadius: moderateScale(15),
+    borderColor: "black",
+  },
+  otpContainer: {
+    gap: moderateScale(12),
   },
 });
