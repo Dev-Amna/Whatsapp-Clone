@@ -29,7 +29,7 @@ const Main = () => {
       case "Status": {
         return <Status />;
       }
-      case "Call": {
+      case "Calls": {
         return <Calls />;
       }
       default: {

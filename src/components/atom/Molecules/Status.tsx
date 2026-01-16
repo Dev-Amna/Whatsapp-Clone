@@ -3,7 +3,7 @@ import React from 'react'
 
 const Status = () => {
   return (
-    <View style={{flex: 1, backgroundColor: "green"}}>
+    <View>
       <Text>Status</Text>
     </View>
   )

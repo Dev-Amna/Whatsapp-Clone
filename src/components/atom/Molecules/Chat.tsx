@@ -1,12 +1,13 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import { View, Text } from "react-native";
+import React from "react";
+import MessageCard from "./MessageCard";
 
 const Chat = () => {
   return (
-    <View style={{flex: 1, backgroundColor: "red"}}>
-      <Text >Im Chat</Text>
+    <View>
+      <MessageCard />
     </View>
-  )
-}
+  );
+};
 
-export default Chat
+export default Chat;
