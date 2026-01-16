@@ -16,7 +16,7 @@ const RootNavigation = () => {
   useEffect(() => {
     // check user auth
     const checkAuth = async () => {
-      // this line for testing when I want to loggot and clear my token
+      // this line for testing when I want to loggout  and clear my token
       // await storage.delete("accessToken");
 
       const accessToken = await storage.getString("accessToken");
