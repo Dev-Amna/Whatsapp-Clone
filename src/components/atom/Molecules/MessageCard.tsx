@@ -1,8 +1,7 @@
 import React from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { moderateScale, scale, verticalScale } from "react-native-size-matters";
-import { FontAwesome } from "@expo/vector-icons";
-
+import Ionicons from '@expo/vector-icons/Ionicons';
 interface MessageDataLook {
   name: string;
   time?: string | number;
@@ -10,9 +9,9 @@ interface MessageDataLook {
   msg: string;
   msgCount?: number;
   giveStyle?: any;
-   iconName?: string;
- iconStyling?:any;
- logoCom?: any
+  iconName?: string;
+  logoCom?: any;
+  iconStyle?:any
 }
 const MessageCard = ({
   name,
@@ -22,8 +21,8 @@ const MessageCard = ({
   image,
   giveStyle,
   iconName,
-  iconStyling,
-  logoCom
+  logoCom,
+  iconStyle
 }: MessageDataLook) => {
   const timeColor =
     typeof time === "string" && time.toLowerCase() === "yesterday"
@@ -51,7 +50,7 @@ const MessageCard = ({
             <Text style={styles.msgCount}>{msgCount}</Text>
           </View>
         )}
-         {iconName && <FontAwesome name={iconName} style={iconStyling}/>}
+      {iconName && <Ionicons name={iconName} style={iconStyle}/>}
       </View>
     </TouchableOpacity>
   );

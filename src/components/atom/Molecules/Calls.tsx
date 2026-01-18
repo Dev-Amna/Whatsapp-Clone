@@ -1,9 +1,9 @@
-import { View, FlatList, StyleSheet } from "react-native";
+import { View, FlatList } from "react-native";
 import React from "react";
 import MessageCard from "./MessageCard";
 import { data } from "../../../data/callData";
 
-import { moderateScale } from "react-native-size-matters";
+
 const Call = () => {
   return (
     <View style={{ flex: 1 }}>
@@ -16,9 +16,8 @@ const Call = () => {
               name={item?.name}
               msg={item?.time}
               image={item?.image}
-              
               iconName={item?.iconName}
-              iconStyling={styles.iconStyle}
+              iconStyle={item?.iconStyle}
             />
           );
         }}
@@ -27,11 +26,5 @@ const Call = () => {
   );
 };
 
-const styles = StyleSheet.create({
-  iconStyle :{
-    fontSize: moderateScale(23),
-    color: "#008069",
-    alignItems:"center"
-  }
-})
+
 export default Call;

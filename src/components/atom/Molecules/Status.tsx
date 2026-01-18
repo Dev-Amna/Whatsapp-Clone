@@ -40,6 +40,7 @@ const Status = () => {
   );
 };
 
+//
 const styles = StyleSheet.create({
   imageStyle: {
     borderWidth: 3,
