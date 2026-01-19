@@ -56,6 +56,9 @@ const MessageCard = ({
   );
 };
 
+/*
+
+*/
 const styles = StyleSheet.create({
   Button: {
     flexDirection: "row",
