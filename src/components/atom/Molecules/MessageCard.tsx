@@ -9,7 +9,7 @@ interface MessageDataLook {
   msg: string;
   msgCount?: number;
   giveStyle?: any;
-  iconName?: string;
+  iconName?: any;
   logoCom?: any;
   iconStyle?:any
 }
