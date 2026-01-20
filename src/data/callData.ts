@@ -16,6 +16,7 @@ export let data = [
     image: imagePath.asia,
     iconName: "videocam-sharp",
     iconStyle: styles.iconStyle,
+    callLeftIcon  : "arrow-down-left"
   },
   {
     name: "Asia Ashraf",
@@ -23,6 +24,7 @@ export let data = [
     image: imagePath.asia,
     iconName: "call-sharp",
     iconStyle: styles.iconStyle,
+    callLeftIcon  : "videocam-sharp"
   },
   {
     name: "Zoha",
@@ -30,6 +32,7 @@ export let data = [
     image: imagePath.zoha,
     iconName: "videocam-sharp",
     iconStyle: styles.iconStyle,
+    callLeftIcon  : "videocam-sharp"
   },
   {
     name: "Sara",
@@ -37,6 +40,7 @@ export let data = [
     image: imagePath.sara,
     iconName: "call-sharp",
     iconStyle: styles.iconStyle,
+    callLeftIcon  : "videocam-sharp"
   },
   {
     name: "Sana",
