@@ -2,7 +2,7 @@ import React from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { moderateScale, scale, verticalScale } from "react-native-size-matters";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import Feather from '@expo/vector-icons/Feather';
+import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 interface MessageDataLook {
   name: string;
   time?: string | number;
@@ -13,7 +13,8 @@ interface MessageDataLook {
   iconName?: any;
   logoCom?: any;
   iconStyle?: any;
-  callLeftIcon?:any
+  callLeftIcon?: any;
+  callLeftIconStyle?: any;
 }
 const MessageCard = ({
   name,
@@ -25,7 +26,8 @@ const MessageCard = ({
   iconName,
   logoCom,
   iconStyle,
-  callLeftIcon
+  callLeftIcon,
+  callLeftIconStyle,
 }: MessageDataLook) => {
   const timeColor =
     typeof time === "string" && time.toLowerCase() === "yesterday"
@@ -43,8 +45,9 @@ const MessageCard = ({
         <View>
           <Text style={styles.name}>{name}</Text>
           <View>
-           
-             {callLeftIcon && <Ionicons name={callLeftIcon} style={iconStyle} />}
+            {callLeftIcon && (
+              <MaterialCommunityIcons name={callLeftIcon} style={callLeftIconStyle} />
+            )}
             <Text style={styles.message}>{msg}</Text>
           </View>
         </View>

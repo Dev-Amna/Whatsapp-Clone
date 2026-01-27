@@ -8,6 +8,11 @@ const styles = StyleSheet.create({
     color: "#008069",
     alignItems: "center",
   },
+  leftIconStyle: {
+    fontSize: moderateScale(20),
+    color: "#008069",
+    alignItems: "center",
+  },
 });
 export let data = [
   {
@@ -16,7 +21,8 @@ export let data = [
     image: imagePath.asia,
     iconName: "videocam-sharp",
     iconStyle: styles.iconStyle,
-    callLeftIcon  : "arrow-down-left"
+    callLeftIcon: "arrow-bottom-left",
+    callLeftIconStyle: [styles.leftIconStyle, {color :"red"}],
   },
   {
     name: "Asia Ashraf",
@@ -24,7 +30,8 @@ export let data = [
     image: imagePath.asia,
     iconName: "call-sharp",
     iconStyle: styles.iconStyle,
-    callLeftIcon  : "videocam-sharp"
+    callLeftIcon: "arrow-top-right",
+    callLeftIconStyle: styles.leftIconStyle,
   },
   {
     name: "Zoha",
@@ -32,7 +39,8 @@ export let data = [
     image: imagePath.zoha,
     iconName: "videocam-sharp",
     iconStyle: styles.iconStyle,
-    callLeftIcon  : "videocam-sharp"
+    callLeftIcon: "arrow-top-right",
+    callLeftIconStyle: styles.leftIconStyle,
   },
   {
     name: "Sara",
@@ -40,7 +48,8 @@ export let data = [
     image: imagePath.sara,
     iconName: "call-sharp",
     iconStyle: styles.iconStyle,
-    callLeftIcon  : "videocam-sharp"
+    callLeftIcon: "arrow-bottom-left",
+    callLeftIconStyle: [styles.leftIconStyle, {color :"red"}],
   },
   {
     name: "Sana",
@@ -48,13 +57,18 @@ export let data = [
     image: imagePath.sana,
     iconName: "call-sharp",
     iconStyle: styles.iconStyle,
+    callLeftIcon: "arrow-bottom-left",
+    callLeftIconStyle: [styles.leftIconStyle, {color :"red"}],
   },
+
   {
     name: "Monsaf Ali",
     time: "5:50 AM",
     image: imagePath.monsaf,
     iconName: "videocam-sharp",
     iconStyle: styles.iconStyle,
+    callLeftIcon: "arrow-top-right",
+    callLeftIconStyle: styles.leftIconStyle,
   },
   {
     name: "Ashraf",
@@ -62,14 +76,18 @@ export let data = [
     image: imagePath.ashraf,
     iconName: "call-sharp",
     iconStyle: styles.iconStyle,
+    callLeftIcon: "arrow-top-right",
+    callLeftIconStyle: styles.leftIconStyle,
   },
- 
+
   {
     name: "Iqra",
     time: "7/1/2025",
     image: imagePath.iqra,
     iconName: "videocam-sharp",
     iconStyle: styles.iconStyle,
+    callLeftIcon: "arrow-top-right",
+    callLeftIconStyle: styles.leftIconStyle,
   },
   {
     name: "Fatima Sister",
@@ -77,6 +95,8 @@ export let data = [
     image: imagePath.fatima,
     iconName: "videocam-sharp",
     iconStyle: styles.iconStyle,
+    callLeftIcon: "arrow-top-right",
+    callLeftIconStyle: styles.leftIconStyle,
   },
   {
     name: "Mustafa Kamal",
@@ -84,6 +104,8 @@ export let data = [
     image: imagePath.mustafa,
     iconName: "call-sharp",
     iconStyle: styles.iconStyle,
+    callLeftIcon: "arrow-top-right",
+    callLeftIconStyle: styles.leftIconStyle,
   },
   {
     name: "Mushraf",
@@ -91,6 +113,8 @@ export let data = [
     image: imagePath.mushraf,
     iconName: "call-sharp",
     iconStyle: styles.iconStyle,
+    callLeftIcon: "arrow-top-right",
+    callLeftIconStyle: styles.leftIconStyle,
   },
   {
     name: "Zoha Asif",
@@ -98,6 +122,8 @@ export let data = [
     image: imagePath.zoha,
     iconName: "call-sharp",
     iconStyle: styles.iconStyle,
+    callLeftIcon: "arrow-top-right",
+    callLeftIconStyle: styles.leftIconStyle,
   },
   {
     name: "Yumna",
@@ -105,5 +131,7 @@ export let data = [
     image: imagePath.yumna,
     iconName: "videocam-sharp",
     iconStyle: styles.iconStyle,
+    callLeftIcon: "arrow-bottom-left",
+    callLeftIconStyle:[styles.leftIconStyle, {color :"red"}],
   },
 ];

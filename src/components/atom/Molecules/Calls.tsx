@@ -18,6 +18,7 @@ const Call = () => {
               image={item?.image}
               iconName={item?.iconName}
               iconStyle={item?.iconStyle}
+              callLeftIconStyle={item?.callLeftIconStyle}
               callLeftIcon={item?.callLeftIcon}
             />
           );
