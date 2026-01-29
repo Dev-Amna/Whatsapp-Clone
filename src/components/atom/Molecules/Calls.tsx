@@ -1,12 +1,12 @@
-import { View, FlatList } from "react-native";
+import { FlatList, StyleSheet } from "react-native";
 import React from "react";
 import MessageCard from "./MessageCard";
 import { data } from "../../../data/callData";
-
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const Call = () => {
   return (
-    <View style={{ flex: 1 }}>
+    <SafeAreaView style={styles.container}>
       <FlatList
         data={data}
         keyExtractor={(item, index) => index.toString()}
@@ -24,9 +24,14 @@ const Call = () => {
           );
         }}
       />
-    </View>
+    </SafeAreaView>
   );
 };
-
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    flexDirection: "row",
+  },
+});
 
 export default Call;

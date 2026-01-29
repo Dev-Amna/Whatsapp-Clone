@@ -15,6 +15,7 @@ interface MessageDataLook {
   iconStyle?: any;
   callLeftIcon?: any;
   callLeftIconStyle?: any;
+  onpress?:any
 }
 const MessageCard = ({
   name,
@@ -28,13 +29,14 @@ const MessageCard = ({
   iconStyle,
   callLeftIcon,
   callLeftIconStyle,
+  onpress,
 }: MessageDataLook) => {
   const timeColor =
     typeof time === "string" && time.toLowerCase() === "yesterday"
       ? "gray"
       : "#036A01";
   return (
-    <TouchableOpacity style={styles.Button}>
+    <TouchableOpacity style={styles.Button} onPress={onpress}>
       {/* left */}
       <View style={styles.leftContainer}>
         <View>
@@ -44,9 +46,12 @@ const MessageCard = ({
 
         <View>
           <Text style={styles.name}>{name}</Text>
-          <View>
+          <View style={{ flexDirection: "row" }}>
             {callLeftIcon && (
-              <MaterialCommunityIcons name={callLeftIcon} style={callLeftIconStyle} />
+              <MaterialCommunityIcons
+                name={callLeftIcon}
+                style={callLeftIconStyle}
+              />
             )}
             <Text style={styles.message}>{msg}</Text>
           </View>

@@ -12,11 +12,7 @@ import {
   View,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import {
-  moderateScale,
-  scale,
-  verticalScale,
-} from "react-native-size-matters";
+import { moderateScale, scale, verticalScale } from "react-native-size-matters";
 const Main = () => {
   const [currentPage, setCurrtentPage] = useState("Chat");
 

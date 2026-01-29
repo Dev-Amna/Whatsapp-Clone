@@ -72,7 +72,7 @@ const Login = () => {
         />
       </View>
       {visible && (
-        <CountryPicker 
+        <CountryPicker
           visible={true}
           onClose={() => setVisible(false)}
           onSelect={(e :any) => {
