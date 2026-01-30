@@ -1,6 +1,8 @@
 export default {
   logo: require("@/src/assets/images/icon.png"),
   welcome: require("@/src/assets/images/welcome.png"),
+  dark_bg_image: require("@/src/assets/images/dark-bg-image.jpg"),
+  light_bg_image: require("@/src/assets/images/light-bg-image.jpg"),
   // Chat Persons Images
   sara: require("@/src/assets/images/chatImage/sara.jpg"),
   sana: require("@/src/assets/images/chatImage/sana.png"),
@@ -15,4 +17,5 @@ export default {
   yumna: require("@/src/assets/images/chatImage/yumna.jpg"),
   amna: require("@/src/assets/images/chatImage/amna.png"),
   mushraf: require("@/src/assets/images/chatImage/mushraf.jpg"),
+
 };
