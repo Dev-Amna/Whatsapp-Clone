@@ -1,4 +1,4 @@
-import { View, Text, Appearance } from "react-native";
+
 import React, { useEffect, useState } from "react";
 import { Redirect, Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
@@ -17,6 +17,7 @@ const RootNavigation = () => {
     // check user auth
     const checkAuth = async () => {
       // this line for testing when I want to loggout  and clear my token
+      // when I make logout btn so I will use this
       // await storage.delete("accessToken");
 
       const accessToken = await storage.getString("accessToken");

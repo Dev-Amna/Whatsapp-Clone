@@ -1,4 +1,4 @@
-import { View, FlatList, TouchableOpacity, StyleSheet } from "react-native";
+import { View, FlatList, TouchableOpacity } from "react-native";
 import React from "react";
 import MessageCard from "./MessageCard";
 import { data } from "../../../data/chatData";
