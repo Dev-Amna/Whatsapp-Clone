@@ -1,17 +1,40 @@
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Alert, Image, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { moderateScale, scale } from "react-native-size-matters";
-const ChatHeader = () => {
+import { moderateScale } from "react-native-size-matters";
+import { router } from "expo-router";
+
+import AntDesign from "@expo/vector-icons/AntDesign";
+import Entypo from "@expo/vector-icons/Entypo";
+const ChatHeader = ({ dp, namePerson } :any) => {
   return (
     <View style={styles.container}>
       <View style={styles.nameContainer}>
-        <Ionicons name="arrow-back-sharp" style={styles.backIcon} />
-        <Image
-          source={require("@/src/assets/images/icon.png")}
-          style={styles.image}
+        <Ionicons
+          name="arrow-back-sharp"
+          style={styles.IconStyle}
+          onPress={() => router.back()}
         />
-        <Text style={styles.name}>Amna Ashraf</Text>
+        <Image source={dp} style={styles.image} />
+        <Text style={styles.name}>{namePerson}</Text>
+      </View>
+
+      <View style={styles.actionButtonCon}>
+        <AntDesign
+          name="video-camera"
+          style={styles.IconStyle}
+          onPress={() => Alert.alert("You Click Video Call button!!!")}
+        />
+        <Ionicons
+          name="call-sharp"
+          style={styles.IconStyle}
+          onPress={() => Alert.alert("You Click Voice Call button!!!")}
+        />
+        <Entypo
+          name="dots-three-vertical"
+          style={styles.IconStyle}
+          onPress={() => Alert.alert("You Click  Menu button!!!")}
+        />
       </View>
     </View>
   );
@@ -19,20 +42,33 @@ const ChatHeader = () => {
 
 const styles = StyleSheet.create({
   container: {
-    paddingHorizontal: 20,
-    paddingVertical: 15,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    paddingHorizontal: 25,
+    paddingVertical: 25,
   },
   nameContainer: {
-    flex: 1,
-    flexDirection: "column",
-    alignItems: "center"
+    flexDirection: "row",
+    gap: 10,
+    alignItems: "center",
   },
-  backIcon: {},
+  IconStyle: {
+    fontSize: moderateScale(20),
+  },
   image: {
-    height :moderateScale(50),
-    width: moderateScale(50)
+    height: moderateScale(30),
+    width: moderateScale(30),
+    borderRadius: moderateScale(50),
   },
-  name: {},
+  name: {
+    fontSize: moderateScale(20),
+    fontWeight: "bold",
+  },
+  actionButtonCon: {
+    flexDirection: "row",
+    gap: 15,
+    alignItems: "center",
+  },
 });
 
 export default ChatHeader;

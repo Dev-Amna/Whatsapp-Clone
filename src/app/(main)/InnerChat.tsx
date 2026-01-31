@@ -4,19 +4,15 @@ import Chat from "@codsod/react-native-chat";
 import colors from "@/src/styles/colors";
 import imagePath from "@/src/constants/imagePath";
 import ChatHeader from "@/src/components/atom/ChatHeader";
+import { useLocalSearchParams } from "expo-router";
+import chatMessages from "@/src/data/chatMessages";
 
 const InnerChat = () => {
-  const [messages, setMessages] = useState<any>([
-    {
-      _id: 1,
-      text: "Hello",
-      createdAt: new Date(),
-      user: {
-        _id: 2,
-        name: "asia",
-      },
-    },
-  ]);
+  const {namePerson, dp} = useLocalSearchParams();
+  const userImage :any = imagePath[dp];
+  const [messages, setMessages] = useState<any>(
+   chatMessages[id]
+    );
   const OnSendMessage = (text: string) => {
     const message = {
       _id: messages.length + 1,
@@ -31,7 +27,7 @@ const InnerChat = () => {
   };
   return (
     <View style={{ flex: 1 }}>
-      <ChatHeader />
+      <ChatHeader namePerson={namePerson} dp={userImage}/>
       <Chat
         messages={messages}
         setMessages={(val) => OnSendMessage(val)}

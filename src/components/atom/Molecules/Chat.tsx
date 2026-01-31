@@ -3,12 +3,19 @@ import React from "react";
 import MessageCard from "./MessageCard";
 import { data } from "../../../data/chatData";
 import { useRouter } from "expo-router";
+import imagePath from "@/src/constants/imagePath";
 
 const Chat = () => {
   let router = useRouter();
-  const onPressFunction = () => {
+  const onPressFunction = (item :any) => {
     console.log("Pressd!!");
-    router.push("/InnerChat");
+    router.push({
+      pathname: "/InnerChat",
+      params: {
+        namePerson: item.name,
+        dp: item.image,
+      },
+    });
   };
   return (
     <View style={{ flex: 1 }}>
@@ -18,11 +25,11 @@ const Chat = () => {
         renderItem={({ item }) => (
           <TouchableOpacity>
             <MessageCard
-              onpress={onPressFunction}
+              onpress={() => onPressFunction(item)}
               name={item?.name}
               time={item?.time}
               msg={item?.msg}
-              image={item?.image}
+              image={imagePath[item.image]}
               msgCount={item?.msgcount}
             />
           </TouchableOpacity>
