@@ -1,5 +1,6 @@
 export let data = [
   {
+    id: "asia",           
     name: "Asia Ashraf",
     time: "5:41 AM",
     image: "asia",
@@ -7,13 +8,15 @@ export let data = [
     msgcount: 1,
   },
   {
+    id: "sara",
     name: "Sara",
     time: "5:42 AM",
     image: "sara",
-    msg: " Amna Complete this project.",
+    msg: "Amna project complete hua?",
     msgcount: 3,
   },
   {
+    id: "sana",
     name: "Sana",
     time: "5:45 AM",
     image: "sana",
@@ -21,6 +24,7 @@ export let data = [
     msgcount: 1,
   },
   {
+    id: "monsafali",
     name: "Monsaf Ali",
     time: "5:50 AM",
     image: "monsaf",
@@ -28,6 +32,7 @@ export let data = [
     msgcount: 2,
   },
   {
+    id: "ashraf",
     name: "Ashraf",
     time: "Yesterday",
     image: "ashraf",
@@ -35,13 +40,15 @@ export let data = [
     msgcount: 1,
   },
   {
-    name: "You",
+    id: "Shazi",
+    name: "Shazi",
     time: "Yesterday",
     image: "amna",
     msg: "You Will Do this!",
     msgcount: 0,
   },
   {
+    id: "iqra",
     name: "Iqra",
     time: "7/1/2025",
     image: "iqra",
@@ -49,6 +56,7 @@ export let data = [
     msgcount: 0,
   },
   {
+    id: "fatimasister",
     name: "Fatima Sister",
     time: "6/1/2026",
     image: "fatima",
@@ -56,6 +64,7 @@ export let data = [
     msgcount: 0,
   },
   {
+    id: "mustafakamal",
     name: "Mustafa Kamal",
     time: "5/1/2026",
     image: "mustafa",
@@ -63,6 +72,7 @@ export let data = [
     msgcount: 0,
   },
   {
+    id: "mushraf",
     name: "Mushraf",
     time: "6/1/2026",
     image: "mushraf",
@@ -70,6 +80,7 @@ export let data = [
     msgcount: 0,
   },
   {
+    id: "zohaasif",
     name: "Zoha Asif",
     time: "2/1/2026",
     image: "zoha",
@@ -77,6 +88,7 @@ export let data = [
     msgcount: 0,
   },
   {
+    id: "yumna",
     name: "Yumna",
     time: "2/1/2026",
     image: "yumna",

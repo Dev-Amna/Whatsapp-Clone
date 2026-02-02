@@ -8,11 +8,14 @@ import { useLocalSearchParams } from "expo-router";
 import chatMessages from "@/src/data/chatMessages";
 
 const InnerChat = () => {
-  const {namePerson, dp} = useLocalSearchParams();
-  const userImage :any = imagePath[dp];
+
+
+  const {id, namePerson, dp} = useLocalSearchParams();
+  const userImage = imagePath[dp];
   const [messages, setMessages] = useState<any>(
-   chatMessages[id]
-    );
+   chatMessages[id] || []
+    
+  );
   const OnSendMessage = (text: string) => {
     const message = {
       _id: messages.length + 1,
@@ -23,11 +26,17 @@ const InnerChat = () => {
         name: "amna ashraf",
       },
     };
-    setMessages((prevMessages: any) => [message, ...prevMessages]);
+    setMessages((prevMessages: any) => 
+    {
+      const update = [message, ...prevMessages];
+      chatMessages[id] = update;
+      return update;
+    }
+    );
   };
   return (
     <View style={{ flex: 1 }}>
-      <ChatHeader namePerson={namePerson} dp={userImage}/>
+      <ChatHeader id={id} namePerson={namePerson} dp={userImage}/>
       <Chat
         messages={messages}
         setMessages={(val) => OnSendMessage(val)}

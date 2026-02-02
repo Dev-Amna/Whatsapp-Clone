@@ -10,12 +10,15 @@ const Chat = () => {
   const onPressFunction = (item :any) => {
     console.log("Pressd!!");
     router.push({
-      pathname: "/InnerChat",
+      pathname: "/(main)/InnerChat",
+      
       params: {
+         id: item.id,
         namePerson: item.name,
         dp: item.image,
       },
     });
+    
   };
   return (
     <View style={{ flex: 1 }}>
